@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="kNbYCZ2kXTujQAN2R0CEcYlBglPZnepB";analytics.SNIPPET_VERSION="4.13.2";
+        analytics.load("kNbYCZ2kXTujQAN2R0CEcYlBglPZnepB");
+        analytics.page();
+        }}();
+      </script>
+</head>
+
+<body>
+<h1>Ademola Mohammed Form</h1>
+
+<form id="form">
+    <label>First name</label><br>
+    <input type="text" id="fname" name="fname"><br>
+
+    <label>Last name</label><br>
+    <input type="text" id="lname" name="lname"> <br>
+
+    <label>Email address </label><br>
+    <input type="text" id="email" name="email"><br> 
+
+    <label>Phone number</label><br>
+    <input type="text" id="phone" name="phone"><br>
+
+   <label> House number</label> <br>
+   <input type="text" id="housenumber" name="housenumber"><br>
+
+   <label > Postcode </label><br>
+   <input type="text" id="postcode" name="postcode"><br>
+
+   <label > Street Name </label><br>
+   <input type="text" id="streetname" name="streetname" ><br>
+
+   <br>
+
+   <button type="button" value="submit" id="submit" onclick = "grab()" >Submit form </button>
+
+</form>
+
+<script>
+function grab(){
+
+    var first = document.getElementById("fname").value;
+    var last = document.getElementById("lname").value;
+    var email = document.getElementById("email").value;
+    var phone = document.getElementById("phone").value;
+    var housenumber = document.getElementById("housenumber").value;
+    var postcode = document.getElementById("postcode").value;
+    var streetname = document.getElementById("streetname").value;
+
+
+const rand = Math.random().toString(16).substr(2, 8);
+
+analytics.identify( rand , {
+    first_name: first,
+    last_name: last,
+    email_address: email,
+    phone_number: phone,
+    address:{
+        house_number: housenumber,
+        postcode: postcode,
+        street_name:streetname,
+  }
+});
+
+
+analytics.track("Sign Up",{
+    userID: rand,
+
+});
+
+
+
+}
+
+</script>
+
+    
+</body>
+
+</html>
